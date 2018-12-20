@@ -1,7 +1,7 @@
 ##############################################################################################################################
 ##R CODE FOR THE BRASS RELATIONAL GOMPERTZ MODEL OF FERTILITY
 ##
-##EDDIE HUNSINGER, FEBRUARY 2011 (LAST UPDATED FEBRUARY 12, 2011)
+##EDDIE HUNSINGER, FEBRUARY 2011 (LAST UPDATED DECEMBER 2018)
 ##http://www.demog.berkeley.edu/~eddieh/
 ##
 ##IF YOU WOULD LIKE TO USE, SHARE OR REPRODUCE THIS CODE, BE SURE TO CITE THE SOURCE
@@ -17,7 +17,7 @@
 ##so the goal is to adjust standard data (StandardFx) to meet the earliness and width of SampleFx)
 ##############################################################################################################################
 
-fx<-read.table(file="http://www.demog.berkeley.edu/~eddieh/AppliedDemographyToolbox/BrassRelationalGompertz/Fx.csv",header=TRUE,sep=",")
+fx<-read.table(file="https://github.com/AppliedDemogToolbox/Hunsinger_BrassRelationalGompertz/raw/master/Fx.csv",header=TRUE,sep=",")
 
 plot(fx$SampleFx,type="l",col="blue",lwd=5)
 mtext(line=-14,text="Sample fx",font=2,cex=1,col="blue")
