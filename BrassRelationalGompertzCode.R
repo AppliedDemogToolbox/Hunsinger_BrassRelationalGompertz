@@ -9,7 +9,7 @@
 ##EXAMPLE DATA IS LINKED, SO YOU SHOULD BE ABLE TO SIMPLY COPY ALL AND PASTE INTO R
 ##
 ##THERE IS NO WARRANTY FOR THIS CODE
-##THIS CODE HAS NOT BEEN TESTED AT ALL-- PLEASE LET ME KNOW IF YOU FIND ANY PROBLEMS (edynivn@gmail.com)
+##THIS CODE HAS NOT BEEN TESTED AT ALL-- PLEASE LET ME KNOW IF YOU FIND ANY PROBLEMS (edyhsgr@gmail.com)
 ##############################################################################################################################
 
 ##############################################################################################################################
