@@ -1,7 +1,7 @@
 ##############################################################################################################################
 ##R CODE FOR THE BRASS RELATIONAL GOMPERTZ MODEL OF FERTILITY
 ##
-##EDDIE HUNSINGER, FEBRUARY 2011 (LAST UPDATED DECEMBER 2018)
+##EDDIE HUNSINGER, FEBRUARY 2011 (LAST UPDATED MARCH 2022)
 ##http://www.demog.berkeley.edu/~eddieh/
 ##
 ##EXAMPLE DATA IS LINKED, SO YOU SHOULD BE ABLE TO SIMPLY COPY ALL AND PASTE INTO R
@@ -16,11 +16,19 @@
 ##############################################################################################################################
 
 fx<-read.table(file="https://github.com/AppliedDemogToolbox/Hunsinger_BrassRelationalGompertz/raw/master/Fx.csv",header=TRUE,sep=",")
+agegrouplabels<-c("0-4","5-9","10-14","15-19","20-24","25-29","30-34","35-39","40-44","45-49","50-54","55-59","60-64","65-69","70-74","75-79","80-84","85-89","90-94","95-99","100+")
 
-plot(fx$SampleFx,type="l",col="blue",lwd=5)
-mtext(line=-14,text="Sample fx",font=2,cex=1,col="blue")
-points(fx$StandardFx,type="l",col="red",lwd=5)
-mtext(line=-10,text="Standard fx",font=2,cex=1,col="red")
+plot(fx$SampleFx,type="l",,ylim=c(0,.42),
+main="Brass relational Gompertz model demonstration",
+		xlab="age",
+		ylab="fertility rate, proportional (sums to 1)",
+		col="blue",lwd=5,axes=FALSE)
+	axis(side=2,las=2)
+	axis(side=1,at=1:length(fx$x),
+		labels=agegrouplabels,cex.axis=.75,las=2)
+points(fx$StandardFx,type="l",lty=2,col="red",lwd=5)
+legend(x="topright",legend=c("sample","standard"),
+       col=c("blue","red"),lty=c(1,2),lwd=c(5,5),bg="white")
 
 ##############################################################################################################################
 #STEP 2: Enter the Brass Relational Gompertz function
@@ -60,8 +68,9 @@ fxAdjusted<-NULL
 for (i in 2:length(YxStandard)){fxAdjusted[i]<-cumsumfxAdjusted[i]-cumsumfxAdjusted[i-1]}
 fxAdjusted[1]<-0
 
-points(fxAdjusted,type="l",col="purple",lwd=5)
-mtext(line=-12,text="Standard fx Adjusted",font=2,cex=1,col="purple")
+points(fxAdjusted,type="l",lty=3,col="purple",lwd=5)
+legend(x="topright",legend=c("sample","standard","adjusted standard"),
+       col=c("blue","red","purple"),lty=c(1,2,3),lwd=c(5,5,5),bg="white")
 
 ##############################################################################################################################
 #STEP 5: Plot some effects of change in Brass Alpha and Brass Beta
@@ -99,19 +108,31 @@ fxLowBeta<-NULL
 for (i in 2:length(YxStandard)){fxLowBeta[i]<-cumsumfxLowBeta[i]-cumsumfxLowBeta[i-1]}
 fxLowBeta[1]<-0
 
-plot(fx$StandardFx,type="l",col="purple",lwd=5)
-mtext(line=-12,text="Standard fx",font=2,cex=1,col="purple")
-points(fxHighAlpha,type="l",col="red",lwd=5)
-mtext(line=-10,text="High (0.5) Alpha fx",font=2,cex=1,col="red")
-points(fxLowAlpha,type="l",col="blue",lwd=5)
-mtext(line=-14,text="Low (-0.5) Alpha fx",font=2,cex=1,col="blue")
+plot(fx$StandardFx,type="l",,ylim=c(0,.42),
+main="Brass relational Gompertz model demonstration",
+		xlab="age",
+		ylab="fertility rate, proportional (sums to 1)",
+		col="purple",lwd=5,axes=FALSE)
+	axis(side=2,las=2)
+	axis(side=1,at=1:length(fx$x),
+		labels=agegrouplabels,cex.axis=.75,las=2)
+points(fxHighAlpha,type="l",lty=2,col="red",lwd=5)
+points(fxLowAlpha,type="l",lty=3,col="blue",lwd=5)
+legend(x="topright",legend=c("standard","standard with 0.5 alpha","standard with -0.5 alpha"),
+       col=c("purple","red","blue"),lty=c(1,2,3),lwd=c(5,5,5),bg="white")
 
-plot(fx$StandardFx,type="l",col="purple",lwd=5)
-mtext(line=-12,text="Standard fx",font=2,cex=1,col="purple")
-points(fxHighBeta,type="l",col="red",lwd=5)
-mtext(line=-10,text="High (1.5) Beta fx",font=2,cex=1,col="red")
-points(fxLowBeta,type="l",col="blue",lwd=5)
-mtext(line=-14,text="Low (0.5) Beta fx",font=2,cex=1,col="blue")
+plot(fx$StandardFx,type="l",ylim=c(0,.42),
+main="Brass relational Gompertz model demonstration",
+		xlab="age",
+		ylab="fertility rate, proportional (sums to 1)",
+		col="purple",lwd=5,axes=FALSE)
+	axis(side=2,las=2)
+	axis(side=1,at=1:length(fx$x),
+		labels=agegrouplabels,cex.axis=.75,las=2)
+points(fxHighBeta,type="l",lty=2,col="red",lwd=5)
+points(fxLowBeta,type="l",lty=3,col="blue",lwd=5)
+legend(x="topright",legend=c("standard","standard with 0.5 beta","standard with -0.5 beta"),
+       col=c("purple","red","blue"),lty=c(1,2,3),lwd=c(5,5,5),bg="white")
 
 #write.table(###, file="G:/###/###.csv", sep=",")
 
