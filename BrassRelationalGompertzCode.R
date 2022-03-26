@@ -21,7 +21,7 @@ agegrouplabels<-c("0-4","5-9","10-14","15-19","20-24","25-29","30-34","35-39","4
 plot(fx$SampleFx,type="l",,ylim=c(0,.42),
 main="Brass relational Gompertz model demonstration",
 		xlab="age",
-		ylab="fertility rate, proportional (sums to 1)",
+		ylab="proportional fertility rate (sums to 1)",
 		col="blue",lwd=5,axes=FALSE)
 	axis(side=2,las=2)
 	axis(side=1,at=1:length(fx$x),
@@ -111,7 +111,7 @@ fxLowBeta[1]<-0
 plot(fx$StandardFx,type="l",,ylim=c(0,.42),
 main="Brass relational Gompertz model demonstration",
 		xlab="age",
-		ylab="fertility rate, proportional (sums to 1)",
+		ylab="proportional fertility rate (sums to 1)",
 		col="purple",lwd=5,axes=FALSE)
 	axis(side=2,las=2)
 	axis(side=1,at=1:length(fx$x),
@@ -124,7 +124,7 @@ legend(x="topright",legend=c("standard","standard with 0.5 alpha","standard with
 plot(fx$StandardFx,type="l",ylim=c(0,.42),
 main="Brass relational Gompertz model demonstration",
 		xlab="age",
-		ylab="fertility rate, proportional (sums to 1)",
+		ylab="proportional fertility rate (sums to 1)",
 		col="purple",lwd=5,axes=FALSE)
 	axis(side=2,las=2)
 	axis(side=1,at=1:length(fx$x),
