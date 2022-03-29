@@ -131,7 +131,7 @@ main="Brass relational Gompertz model demonstration",
 		labels=agegrouplabels,cex.axis=.75,las=2)
 points(fxHighBeta,type="l",lty=2,col="red",lwd=5)
 points(fxLowBeta,type="l",lty=3,col="blue",lwd=5)
-legend(x="topright",legend=c("standard","standard with 0.5 beta","standard with -0.5 beta"),
+legend(x="topright",legend=c("standard","standard with 1.5 beta","standard with 0.5 beta"),
        col=c("purple","red","blue"),lty=c(1,2,3),lwd=c(5,5,5),bg="white")
 
 #write.table(###, file="G:/###/###.csv", sep=",")
