@@ -1,7 +1,7 @@
 ##############################################################################################################################
 ##R CODE FOR THE BRASS RELATIONAL GOMPERTZ MODEL OF FERTILITY
 ##
-##EDDIE HUNSINGER, FEBRUARY 2011 (LAST UPDATED MARCH 2022)
+##EDDIE HUNSINGER, FEBRUARY 2011 (LAST UPDATED OCTOBER 2022)
 ##http://www.demog.berkeley.edu/~eddieh/
 ##
 ##EXAMPLE DATA IS LINKED, SO YOU SHOULD BE ABLE TO SIMPLY COPY ALL AND PASTE INTO R
